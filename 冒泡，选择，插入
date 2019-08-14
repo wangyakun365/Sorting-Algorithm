@@ -1,0 +1,61 @@
+package com.wang.demo;
+
+public class Sort {
+	public static void main(String[] args) {
+		/////////////////////////////////////////////////////////////冒泡排序
+		int[] array1 = {1,5,3,2,6,7,9,13,54,20};
+		//N个数,比较N-1轮
+		for(int i=0;i<array1.length-1;i++) {
+			//每一轮的比较次数为N-1-i
+			for(int j=0;j<array1.length-1-i;j++) {
+				if(array1[j]>array1[j+1]) {//把大的往下沉，做交换
+					int temp = array1[j];
+					array1[j] = array1[j+1];
+					array1[j+1] = temp;
+				}
+			}
+		}
+		//口诀：外循环n-1次，内循环n-1-i次
+		//遍历排好序的
+		for(int i=0;i<array1.length;i++) {
+			System.out.print(array1[i]+"  ");
+		}	
+		////////////////////////////////////
+		System.out.println();
+		////////////////////////////////////////////////////////////选择排序
+		int[] array2 = {1,5,3,2,6,7,9,13,54,20};
+		int min = 0;//保存最先元素的下标
+		for(int i=0;i<array2.length-1;i++) {
+			min = i;
+			for(int j=i+1;j<array2.length;j++) {
+				if(array2[i]>array2[j]) {
+					int temp = array2[i];
+					array2[i] = array2[j];
+					array2[j] = temp;
+				}
+			}
+		}
+		//遍历排好序的
+		for(int i=0;i<array2.length;i++) {
+			System.out.print(array2[i]+"  ");
+			}
+		////////////////////////////////////
+		System.out.println();
+		////////////////////////////////////////////////////////插入排序
+		int[] array3 = {1,5,3,2,6,7,9,13,54,20};
+		for(int i=1;i<array3.length;i++) {
+			int temp = array3[i];
+			int j = i;//把下标保存起来
+			while(j>0&&temp<array3[j-1]) {
+				array3[j] = array3[j-1];
+				j--;
+			}
+			array3[j] = temp;
+		}
+		//遍历排好序的
+		for(int i=0;i<array3.length;i++) {
+			System.out.print(array3[i]+"  ");
+			}	
+		/////////////////////////////////////////////////////////////
+	}
+}
